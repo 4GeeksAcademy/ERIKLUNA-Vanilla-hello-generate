@@ -1,16 +1,19 @@
-let pronoun = ["the", "our", "your"];
-let adj = ["great", "big", "best", "brave"];
-let noun = ["jogger", "racoon", "Juan", "ball", "cat"];
+let pronoun = ["the", "our"];
+let adj = ["great", "big",];
+let noun = ["jogger", "racoon"];
+let extensiones = [".com", ".net", ".org"];
 
-for (let i = 0; i < pronoun.length; i++) {
-  for (let j = 0; j < adj.length; j++) {
-    for (let k = 0; k < noun.length; k++) {
-      let dominio = `${pronoun[i]}${adj[j]}${noun[k]}`;
-      let extensiones = [".com", ".net", ".org", ".io"];
-      for (let l = 0; l < extensiones.length; l++) {
-        let dominioTotal = `${dominio}${extensiones[l]}`;
-        console.log(dominioTotal);
-      }
-    }
-  }
-}
+let generarDominio = [];
+pronoun.forEach(pronounElement => {
+    adj.forEach(adjElement => {
+        noun.forEach(nounElement => {
+            extensiones.forEach(extensionElement  => {
+              generarDominio.push(`${pronounElement }${adjElement }${nounElement}${extensionElement }`);
+            });
+        });
+    });
+});
+
+console.log(generarDominio);
+
+
